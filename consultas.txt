@@ -1,0 +1,35 @@
+-> todas os artigos de determinado reporter
+
+
+>>> Article.objects.filter(reporter_id=2)
+<QuerySet [<Article: Artigo 2>, <Article: EXTRA-EXTRA>]>
+>>>
+
+
+-> todos os artigos de entre 2019-2020
+
+
+>>> artigos_19_20 = Article.objects.filter(pub_date__lte =  "2020-12-31").filter(pub_date__gt = "2019-01-01")
+>>> artigos_19_20
+<QuerySet [<Article: Artigo 2>, <Article: Artigo 3>, <Article: EXTRA-EXTRA>]>
+ 
+
+-> o reporter com mais artigos em 2020 
+ 
+
+
+-> artigos que contenham a palavra "python"
+ e tenham sido publicados por determinado reporter em abril de 2015
+
+
+>>> Article.objects.filter(headline__contains='EXTRA').filter(reporter_id='2').filter(pub_date='2020-05-30')
+<QuerySet [<Article: EXTRA-EXTRA>]>
+>>>
+ 
+
+-> A quantidade de publicacoes que tenham 
+a letra "i"
+
+
+ 
+-> A media de publicacoes por artigos
